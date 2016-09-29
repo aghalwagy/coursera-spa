@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="angular.js"></script>
+		<script src="app.js"></script>
+		<title>Name-ASCII Calculator via AngularJs</title>
+	</head>
+	<body ng-app="NameCalculator">
+		<h1>Name-ASCII Calculator via AngularJs</h1>
+		<div ng-controller="nameCalculatorController">
+			<input type="text"
+				ng-model="name"
+				ng-keyup="displayNumeric();">
+			<div>
+				ASCII Value: <span>{{asciiValue}}</span>
+				{{name}}
+			</div>
+	</div>
+</body>
+</html>
