@@ -14,25 +14,28 @@
     function splitText(text, separator) {
     	if (isEmptyString(text)) return [];
 
-        return text.split(separator, function(e) {
-            !isEmptyString(e);
+        return text.split(separator).filter(function(e) {
+            return !isEmptyString(e);
         });
     }
 
     function LunchCalculatorController($scope) {
         $scope.lunchText = "";
         $scope.lunchEvaluation = "";
+        $scope.colorClass = "";
 
         $scope.calculateLunch = function() {
         	
         	// split entries and exclude the empty ones
             var entries = splitText($scope.lunchText, ",");
-
+            console.log(entries);
             if (entries.length == 0) {
                 $scope.lunchEvaluation = "Please enter data first";
+                $scope.colorClass = "red";
                 return;
             }            
 
+            $scope.colorClass = "green";
             if (entries.length <= 3) {
                 $scope.lunchEvaluation = "Enjoy!";
             } else {
