@@ -25,6 +25,16 @@
         $scope.counter++;
       }, 1000);
     };
+
+    $scope.incrementDelayedWithDigest = function () {
+      setTimeout(function () {
+        console.log('Counter incrementDelayed .. $digest will be called');
+        $scope.counter++;
+
+        // here we specifically tell angular to run its digest cycle
+        $scope.$digest();
+      }, 1000);
+    };
   }
 
 }());
