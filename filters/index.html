@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="CustomFiltersApp">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <script src="angular.min.js"></script>
+    <script src="filter.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body ng-controller="CustomFilterController">
+    <input type="text" ng-model="salary"/>
+    <br><br>
+    Salary: {{ salary }} <br/>
+    Double the Salary: {{ doublIt() }} <br>
+
+    {{ "hello    " |  myuppercase}}
+  </body>
+</html>
