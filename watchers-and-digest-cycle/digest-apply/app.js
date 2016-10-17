@@ -35,6 +35,18 @@
         $scope.$digest();
       }, 1000);
     };
+
+    $scope.incrementDelayedWithApply = function () {
+      setTimeout(function () {
+        // wrapping everything inside $scope.$apply will make sure that the code runs
+        // inside the context of Angular js -- i.e all Digest Cycles, watchers, etc. will
+        // work properly. This is also better than  incrementDelayedWithDigest
+        $scope.$apply(function () {
+          console.log('Counter incrementDelayed .. Running inside context of $apply');
+          $scope.counter++;
+        });
+      }, 1000);
+    };
   }
 
 }());
