@@ -4,9 +4,9 @@
 
   app.controller('WatchersController', watchersController);
 
-  watchersController.$inject = ['$scope'];
+  watchersController.$inject = ['$scope', '$timeout'];
 
-  function watchersController($scope) {
+  function watchersController($scope, $timeout) {
     $scope.counter = 0;
 
     $scope.incrementCounter = function () {
@@ -45,6 +45,13 @@
           console.log('Counter incrementDelayed .. Running inside context of $apply');
           $scope.counter++;
         });
+      }, 1000);
+    };
+
+    $scope.incrementDelayedWithAngularTimeout = function () {
+      $timeout(function () {
+        console.log('Counter incrementDelayedWithAngularTimeout .. No more $apply or $digest hacks needed.');
+        $scope.counter++;
       }, 1000);
     };
   }
