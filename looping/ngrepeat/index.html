@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="LoopingApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Looping (ng-repeat)</title>
+
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body ng-controller="ShoppingListController">
+    <h1>Looping (ng-repeat)</h1>
+    <ul>
+      <li ng-repeat="item in shoppingList">
+        Product: {{item.name}} <br>
+        Price: {{item.price | currency}} <br>
+        Battery: {{ item.batteryCells }} cells.
+      </li>
+    </ul>
+
+    <div class="adder">
+      <input type="text" ng-model="newItemName" placeholder="Name of new item"> <br>
+      <input type="text" ng-model="newItemPrice" placeholder="Price of new item"> <br>
+      <input type="text" name="name" ng-model="newItemBatteryCells" placeholder="How many cells in battery?"><br>
+
+      <button type="button" ng-click="addNew()">Add to List</button>
+    </div>
+
+    <h2>Looping by index</h2>
+    <ul>
+      <li ng-repeat="item in shoppingList">{{$index}}</li>
+    </ul>
+  </body>
+</html>
