@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app="FilteredShoppingList">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script type="text/javascript" src="angular.min.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body ng-controller="FilteredController">
+        <h2>Filter ... </h2>
+        <input type="text" name="name" ng-model="searchPhrase" placeholder="type to filter ...">
+        <ul ng-repeat="item in shoppingList | filter : searchPhrase">
+            <li>{{item}}</li>
+        </ul>
+    </body>
+</html>
