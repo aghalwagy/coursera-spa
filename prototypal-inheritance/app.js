@@ -1,5 +1,5 @@
 (function() {
-    'use strict';
+    //'use strict';
 
     var employee = {
         firstName: "John",
@@ -21,6 +21,15 @@
 
     var sub = Object.create(employee);
 
+    sub.getPosition = function() {
+        console.log('this inside sub.getPosition', this);
+        this.position = { level: 8, payGrade: 'B'};
+        return this.position;
+    };
+
+    var coverup = sub.getPosition();
+
+    console.log('will sub.position overwrite parent', sub.position);
 
 
     // this creates a new firstName property of sub that masks
