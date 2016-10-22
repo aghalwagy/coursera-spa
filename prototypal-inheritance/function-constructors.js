@@ -1,5 +1,9 @@
 (function() {
     'use strict';
+
+    // Notice the naming convention? That's right? Function constructors are
+    // preferred to be Pascaled. Services as a hint to future readers of the
+    // code base that this function is meant to be newed up.
     function Dog(name)  {
         this.name = name;
 
