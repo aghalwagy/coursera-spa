@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="ShoppingList">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script src="angular.min.js" charset="utf-8"></script>
+        <script src="app.js" charset="utf-8"></script>
+    </head>
+    <body>
+        <h1>Shopping List (via Services)</h1>
+
+        <div ng-controller="MutatingController as mutator">
+            <input type="text" name="name" ng-model="mutator.itemName">
+            <input type="text" name="name" ng-model="mutator.itemQuantity">
+            <button type="button" ng-click="mutator.addItem()">Add</button>
+        </div>
+
+        <div ng-controller="DisplayingController as displayer">
+            <ol ng-repeat="item in displayer.showList()">
+                <i>{{ item.quantity }} of {{ item.name }}</li>
+            </ol>
+        </div>
+    </body>
+</html>
