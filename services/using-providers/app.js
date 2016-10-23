@@ -3,8 +3,15 @@
 
     var app = angular.module('ShoppingList', [])
         .controller('ShoppingController', shoppingController)
-        .provider('ShoppingService', ShoppingServiceProvider);
+        .provider('ShoppingService', ShoppingServiceProvider)
+        .config(Config);
 
+    Config.$inject = ['ShoppingServiceProvider'];
+
+    function Config(provider) {
+        // this applies globally for each instance created of ShoppingService
+        provider.defaults.max = 2;
+    }
 
     shoppingController.$inject = ['ShoppingService'];
 
