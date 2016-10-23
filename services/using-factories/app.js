@@ -13,8 +13,8 @@
         ctrl.itemQuantity = "";
 
 
-        var shoppingService = ShoppingServiceFactory();
-
+        var shoppingService = ShoppingServiceFactory()();
+        console.log(shoppingService);
         ctrl.addItem = function() {
             return shoppingService.addItem(ctrl.itemName, ctrl.itemQuantity);
         }
@@ -40,13 +40,14 @@
         ctrl.itemQuantity = "";
         ctrl.errorMessage = "";
 
-        var shoppingService = ShoppingServiceFactory(3);
+        var shoppingService = ShoppingServiceFactory()(3);
 
         ctrl.addItem = function() {
             try {
                 shoppingService.addItem(ctrl.itemName, ctrl.itemQuantity);
             } catch (err) {
-                ctrl.errorMessage = err.Messagae;
+                console.log(err);
+                ctrl.errorMessage = err.message;
             }
         }
 
@@ -71,8 +72,8 @@
         var items = [];
 
         service.addItem = function(name, quantity) {
-
-            if (limit === undefined || (limit != undefined && limit < items.length)) {
+            console.log(limit);
+            if (limit === undefined || (limit != undefined && limit > items.length)) {
                 items.push({
                     name: name,
                     quantity: quantity
