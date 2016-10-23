@@ -18,7 +18,10 @@
         <div ng-controller="DisplayingController as displayer">
             <ol ng-repeat="item in displayer.showList()">
                 <i>{{ item.quantity }} of {{ item.name }}</li>
+                <button type="button" name="button" ng-click="displayer.removeItem($index);" value="Remove Item">Remove Item</button>
             </ol>
+
+            <button type="button" name="button" ng-show="displayer.showRemoveAll();" ng-click="displayer.removeAll();">Remove All</button>
         </div>
     </body>
 </html>

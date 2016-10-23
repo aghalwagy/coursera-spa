@@ -26,6 +26,18 @@
         displayer.showList = function () {
             return ShoppingListService.getItems();
         }
+
+        displayer.removeItem = function (index) {
+          return ShoppingListService.removeItem(index);
+        }
+
+        displayer.removeAll = function () {
+            return ShoppingListService.removeAll();
+        }
+
+        displayer.showRemoveAll = function () {
+            return ShoppingListService.getItems().length > 0;
+        }
     }
 
 
@@ -41,6 +53,14 @@
 
         service.getItems = function () {
             return items;
+        }
+
+        service.removeItem = function (index) {
+          items.splice(index, 1);
+        }
+
+        service.removeAll = function () {
+            items.splice(0, items.length);
         }
     }
 
