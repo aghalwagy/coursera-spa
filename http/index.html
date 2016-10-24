@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="ArtistsApp">
+    <head>
+        <meta charset="utf-8">
+        <title>Calling http</title>
+        <script src="angular.min.js" charset="utf-8"></script>
+        <script src="app.js" charset="utf-8"></script>
+    </head>
+    <body>
+        <h1>Http calls y'all</h1>
+        <div ng-controller='ArtitsController as ctrl'>
+            <h3>List of Menu Categories</h3>
+            <ul>
+                <li ng-repeat="artist in ctrl.artists">
+                    (<a href="" ng-click="ctrl.getSongs(artist.name);">
+                        {{ artist.name }}
+                    </a>)
+                    {{ artist.name }}
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>
