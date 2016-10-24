@@ -22,6 +22,7 @@
             ctrl.getSongs = function(artist) {
                 var promise = restService.getSongs(artist);
                 promise.then(function(res) {
+                    console.log(res);
                         console.log(res.data);
                 }).catch(function(err) {
                 console.log('somthing horrible happened when getting songs: ' + err);
