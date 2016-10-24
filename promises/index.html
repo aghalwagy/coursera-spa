@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="PromisesApp">
+    <head>
+        <meta charset="utf-8">
+        <title>using prmises</title>
+        <script src="angular.min.js" charset="utf-8"></script>
+        <script src="app.js" charset="utf-8"></script>
+    </head>
+    <body ng-controller="ShoppingListController as ctrl">
+        <h1>Shopoing list via promises</h1>
+
+        <div class="">
+            <input type="text" name="name" ng-model="ctrl.itemName">
+            <input type="text" name="name" ng-model="ctrl.itemQuantity">
+            <button type="button" ng-click="ctrl.addItem()">Add</button>
+        </div>
+        <div class="">
+            <ul ng-repeat="item in ctrl.getItems()">
+                <li>{{item.quantity}} boxes of {{item.name}}</li>
+            </ul>
+        </div>
+    </body>
+</html>
