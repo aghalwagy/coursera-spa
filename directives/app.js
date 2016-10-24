@@ -10,6 +10,7 @@
 
     function listItemDescription() {
         var ddo = {
+            restrict: 'E', // other options are ['A'] for attribute
             template: '{{ item.quantity }} of {{ item.name }}'
         };
         return ddo;
