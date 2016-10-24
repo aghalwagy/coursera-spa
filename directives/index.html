@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="DirectivesApp">
+    <head>
+        <meta charset="utf-8">
+        <title>Directives App</title>
+        <script src="angular.min.js" charset="utf-8"></script>
+        <script src="app.js" charset="utf-8"></script>
+    </head>
+    <body ng-controller="DirectivesController as ctrl">
+        <h1>Directives App</h1>
+        
+        <item-adder></item-adder>
+
+        <ol ng-repeat="item in ctrl.getItems()">
+            <list-item></list-item>
+        </ol>
+    </body>
+</html>
