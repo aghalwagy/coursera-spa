@@ -21,7 +21,7 @@
         </div>
 
         <!-- LIST #2 (limited to 3 items) -->
-        <div id="list2" ng-controller='ShoppingListController as limitedCtrl'>
+        <div id="list2" ng-controller='LimitedShoppingListController as limitedCtrl'>
             <input type="text" ng-model="limitedCtrl.itemName" placeholder="item name">
             <input type="text" ng-model="limitedCtrl.itemQuantity" placeholder="quantity">
             <button ng-click="limitedCtrl.addItem();">Add Item</button>
