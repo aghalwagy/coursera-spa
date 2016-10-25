@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="DirectivesApp">
+    <head>
+        <meta charset="utf-8">
+        <title>Direvtives with Isolate Scope</title>
+        <script src="angular.min.js" charset="utf-8"></script>
+        <script src="app.js" charset="utf-8"></script>
+        <link rel="stylesheet" href="style.css" media="screen" title="no title">
+    </head>
+    <body>
+        <h1>Direvtives with Isolate Scope</h1>
+        <!-- LIST #1 - unlimited items -->
+        <div id="list1" ng-controller='ShoppingListController as list'>
+            <input type="text" ng-model="list.itemName" placeholder="item name">
+            <input type="text" ng-model="list.itemQuantity" placeholder="quantity">
+            <button ng-click="list.addItem();">Add Item</button>
+
+            <shopping-list my-list="list" title="{{list.title}}"></shopping-list>
+            <div ng-if="list.errorMessage" class="error">Error:
+                {{list.errorMessage}}</div>
+        </div>
+
+        <!-- LIST #2 (limited to 3 items) -->
+        <div id="list2" ng-controller='ShoppingListController as limitedCtrl'>
+            <input type="text" ng-model="limitedCtrl.itemName" placeholder="item name">
+            <input type="text" ng-model="limitedCtrl.itemQuantity" placeholder="quantity">
+            <button ng-click="limitedCtrl.addItem();">Add Item</button>
+
+            <shopping-list my-list="limitedCtrl" title="Shopping List #2 (limited to 3 items)"></shopping-list>
+            <div ng-if="limitedCtrl.errorMessage" class="error">Error:
+                {{list.errorMessage}}</div>
+        </div>
+    </body>
+</html>
