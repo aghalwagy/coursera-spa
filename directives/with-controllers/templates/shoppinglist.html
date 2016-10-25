@@ -1,0 +1,9 @@
+<h3>{{title}}</h3>
+<ol>
+    <li ng-repeat="item in list.items">
+        {{item.quantity}} of {{item.name}}
+        <button ng-click="list.removeItem($index)">Remove</button>
+    </li>
+</ol>
+
+<div class="error" ng-if="list.vodkaInList()">WARNING! WARNING! VOKDA DETECTED!</div>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="DirectivesApp">
+    <head>
+        <meta charset="utf-8">
+        <title>Directives with Custom Controllers</title>
+        <script src="angular.min.js" charset="utf-8"></script>
+        <script src="app.js" charset="utf-8"></script>
+        <link rel="stylesheet" href="style.css" media="screen" title="no title">
+    </head>
+    <body>
+        <h1>Directives with Custom Controllers</h1>
+        <div id="list" ng-controller="ShoppingListController as list">
+            <input type="text" ng-model="list.itemName">
+            <input type="text" ng-model="list.itemQuantity">
+            <button type="button" ng-click="list.addItem()">Add</button>
+
+            <shopping-list title="{{list.title}}" items="list.items"><shopping-list>
+        </div>
+    </body>
+</html>
