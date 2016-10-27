@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="DirectivesApp">
+    <head>
+        <meta charset="utf-8">
+        <title>Passing functions to directives.</title>
+        <script src="angular.min.js" charset="utf-8"></script>
+        <script src="app.js" charset="utf-8"></script>
+    </head>
+    <body ng-controller="ShoppingListController as list">
+        <div class="row">
+            <div class="col-md-12">
+                <input type="text" ng-model="list.itemName" placeholder="Item Name">
+                <input type="text" ng-model="list.itemQuantity" placeholder="Item Quantity">
+                <button ng-click="list.addItem()">Add Item</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <shopping-list title="{{list.title}}"
+                    items="list.items"
+                    bad-remove="list.removeItem"
+                    good-remove="list.removeItem(index)">
+                </shopping-list>
+            </div>
+        </div>
+    </body>
+</html>
