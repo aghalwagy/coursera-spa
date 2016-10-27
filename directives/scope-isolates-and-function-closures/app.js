@@ -25,14 +25,13 @@
 
     function ShoppingListDirectiveController() {
         var list = this;
-        list.vodkaInList = () => {
-          // console.log(this);
-            //   for (var i = 0; i < list.items.length; i++) {
-            //     if (list.items[i].name.toLowerCase().indexOf('vodka') !== -1) {
-            //         return true;
-            //     }
-            // }
-            // return false;
+        list.vodkaInList = () => {            
+              for (var i = 0; i < list.items.length; i++) {
+                if (list.items[i].name.toLowerCase().indexOf('vodka') !== -1) {
+                    return true;
+                }
+            }
+            return false;
         };
     }
 
